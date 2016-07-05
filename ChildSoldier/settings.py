@@ -19,7 +19,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -31,11 +30,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['childsoldier-api.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = (
-    'suit', # Must go before django.contrib.admin
+    'suit',  # Must go before django.contrib.admin
     'suit_ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -95,11 +93,13 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'childsoldiers_api_db',
+        'USER': 'csir_admin',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost'
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -114,7 +114,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -125,5 +124,6 @@ STATICFILES_DIRS = (
 )
 
 import dj_database_url
+
 if os.getcwd() == "/app":
     DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}

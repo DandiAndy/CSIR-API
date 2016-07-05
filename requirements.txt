@@ -2,6 +2,8 @@ django==1.8.5
 django-suit==0.2.15
 djangorestframework==3.2.4
 django-rest-swagger==0.3.4
+django-postgresql==0.0.3
+django-postgresql-manager==0.2.1
 rest_condition==1.0.2
 django-debug-toolbar==1.4
 pylint==1.5.1

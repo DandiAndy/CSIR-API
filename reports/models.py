@@ -37,8 +37,8 @@ class MapPoint(models.Model):
     description = models.TextField()
     long = models.DecimalField(max_digits=10, decimal_places=6)
     lat = models.DecimalField(max_digits=10, decimal_places=6)
-    date = models.DateField()
-    incidents_id = models.PositiveSmallIntegerField(null=True)
+    date = models.DateField(null=True)
+    incidents_id = models.PositiveSmallIntegerField(null=True, blank=True)
 
     def __str__(self):
         return '{title}'.format(title=self.title)
