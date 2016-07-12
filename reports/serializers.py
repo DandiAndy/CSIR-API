@@ -22,10 +22,7 @@ class SectionSerializer(serializers.ModelSerializer):
         model = Section
         fields = ('id', 'order', 'report', 'title', 'content', 'children')
 
-"""
-Adding the new attributes (date and incidents_id).
 
-"""
 class MapPointSerializer(serializers.ModelSerializer):
     class Meta:
         model = MapPoint
